@@ -1,0 +1,91 @@
+
+
+
+.error
+{
+	font-size: 10px;
+    font-weight: normal;
+    font-family: Lato, Arial;
+    color:#DC143C;
+}
+
+.heading1{
+	font-size: 25px;
+    font-weight: bold;
+    font-family: Lato, Arial;
+    color:#000000;
+    text-align: center;
+    margin-top: 10px;
+}
+.tablecss {
+	width: 500px;
+	align: left;
+	border-collapse: separate;
+    border-spacing: 10px;
+    text-align: left;
+}
+.table2css {
+	width: 450px;
+	border-collapse: separate;
+    border-spacing: 10px;
+    text-align: center;
+}
+.textboxcss{
+	font: Lato, normal arial;
+	height: 40px;
+	width: 100%;
+	font-size: 15px;
+	letter-spacing: 2px;
+	text-align: center;
+	border: 2px solid #F0F0F0;
+	top-margin: 10px;
+}
+
+.labelcss{
+	font: Lato, normal arial;
+  	color: #000000;
+  	text-align: left;
+  	font-size: 15px;
+    font-weight: normal;
+    letter-spacing: 2px;
+    margin-top: 10px;
+}
+
+::-webkit-input-placeholder { 
+  color: #BEBFDA;
+}
+::-moz-placeholder { 
+  color: #E3DFDF;
+}
+:-ms-input-placeholder { 
+  color: #E3DFDF;
+}
+:-moz-placeholder { 
+  color: #E3DFDF;
+}
+
+.signupbtn{
+	border: none;
+    padding: 20px 40px 20px 40px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin: 4px 2px;
+    font-weight: bold;
+    font-family: Lato, Arial;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    cursor: pointer;
+  	-webkit-border-radius: 6;
+  	-moz-border-radius: 6;
+  	border-radius: 6px;
+  	color: white; 
+  	background-color: #00738c;
+}
+
+.signupbtn:hover {
+    background-color: #81b0b2;
+    color: white;
+    border: 2px solid #81b0b2;
+}

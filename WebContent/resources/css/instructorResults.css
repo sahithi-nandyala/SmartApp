@@ -1,0 +1,83 @@
+.heading1{
+	font-size: 25px;
+    font-weight: bold;
+    font-family: Arial;
+    color:#000000;
+    text-align: left;
+    margin-top: 10px;
+    margin-left: 25px;
+}
+
+.labelcss{
+  font: bold Lato;
+    font-size: 20px;
+}
+
+.table {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    /* width: 100%; */
+    top-margin: 100px;
+    margin-left: 25px;
+}
+
+.table td, .table th {
+    /* border: 1px solid #ddd; */
+    padding: 2px;
+}
+
+/* .table tr:nth-child(even){background-color: #f2f2f2;} */
+
+/* .table tr:hover {background-color: #ddd;} */
+
+.table th {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    border-bottom: 2px solid #00738c;
+    color: #000;
+}
+.studentTable td, .studentTable th{
+	border: 1px solid #ddd;
+	padding: 10px;
+	text-align:left;
+}
+.resultTable th{
+	width: 10%;
+    border-bottom: 0px solid #00738c;
+    font-size: 20px;
+}
+.resultTable td{
+	width: 15%;
+	padding-left: 20px;
+    font-size: 18px;
+}
+
+.conceptable{
+	width: 50%;
+     font-size: 20px;
+}
+
+
+/* .conceptable td{
+	height: 500px;
+	overflow: scroll;
+} */
+.classes
+{
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+.classes dd
+{
+	display:none;
+	background-color: #f2f2f2;
+}
+.classes dt
+{
+	cursor: pointer;
+}
+
+.classes dt:hover
+{
+	color:red;
+}

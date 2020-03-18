@@ -1,0 +1,74 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+   xmlns:mvc="http://www.springframework.org/schema/mvc"
+   xmlns:context="http://www.springframework.org/schema/context"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="
+   http://www.springframework.org/schema/beans     
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+   http://www.springframework.org/schema/mvc
+   http://www.springframework.org/schema/mvc/spring-mvc.xsd
+   http://www.springframework.org/schema/context 
+   http://www.springframework.org/schema/context/spring-context-3.0.xsd">  
+
+	<context:component-scan base-package="edu.smart.controller"></context:component-scan>
+	
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+	      <property name="prefix" value="/WEB-INF/Views/" />
+	      <property name="suffix" value=".jsp" />
+	</bean>  
+	
+	<mvc:annotation-driven />
+	
+	<mvc:resources mapping="/resources/**" location="/resources/" />
+    
+    <mvc:resources mapping="/tiles/**" location="/tiles/" />
+		
+	<bean id="ds" class="org.springframework.jdbc.datasource.DriverManagerDataSource">  
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="url" value="jdbc:mysql://localhost:3306/smart" />  
+		<property name="username" value="root"></property>  
+		<property name="password" value="smart2017"></property>  
+	</bean>  
+	
+	<bean id="jt" class="org.springframework.jdbc.core.JdbcTemplate">  
+		<property name="dataSource" ref="ds"></property>  
+	</bean>  	
+	
+	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<property name="maxUploadSize" value="1000000"></property>
+	</bean>
+		
+	<bean id="courseDetailsDaoImpl" class="edu.smart.dao.CourseDetailsDaoImpl" autowire="byName">  
+		<property name="template" ref="jt"></property>  
+	</bean>
+	
+	<bean id="managementDaoImpl" class="edu.smart.dao.ManagementDaoImpl" autowire="byName">  
+		<property name="template" ref="jt"></property>  
+	</bean>
+	
+	<bean id="studentdetailsdaoimpl" class="edu.smart.dao.StudentDetailsDaoImpl" autowire="byName">  
+		<property name="template" ref="jt"></property>  
+	</bean>
+	
+	<bean id="smartTestBoImpl" class="edu.smart.bo.SmartTestBoImpl" autowire="byName"/>  
+	<bean id="courseDetailsController" class="edu.smart.controller.CourseDetailsController" autowire="byName"/>
+	<bean id="studentController" class="edu.smart.controller.StudentController" autowire="byName"/>
+	<bean id="researcherController" class="edu.smart.controller.ResearcherController" autowire="byName"/>
+	<bean id="CourseDetailsModel" class="edu.smart.model.CourseDetailsModel" autowire="byName"/>
+ 	<bean id="Runner" class="edu.smart.bo.Runner" autowire="byName"/>
+ 	<bean id="FloydWarshall" class="edu.smart.bo.FloydWarshall" autowire="byName"/>
+ 	<bean id="graphVizDetails" class="edu.smart.pojo.GraphVizDetails" autowire="byName"/>
+	<bean id="displayGraph" class="edu.smart.util.DisplayGraph" autowire="byName"/>
+	<bean id="userDetailsModel" class="edu.smart.model.UserDetailsModel" autowire="byName"/>
+	<bean id="userDetails" class="edu.smart.pojo.UserDetails" autowire="byName"/>
+	<bean id="classDetails" class="edu.smart.pojo.ClassDetails" autowire="byName"/>
+	<bean id="classStudentDetails" class="edu.smart.pojo.ClassStudentDetails" autowire="byName"/>
+	<bean id="assignmentDetails" class="edu.smart.pojo.AssignmentDetails" autowire="byName"/>
+	<bean id="projectDetails" class="edu.smart.pojo.ProjectDetails" autowire="byName"/>
+	<bean id="studentdashboardmodel" class="edu.smart.model.StudentDashboardModel" autowire="byName"/>
+
+	
+	 <!-- <mvc:resources mapping="/images/**" location="/WEB-INF/images/" />   -->
+	
+	
+</beans>  

@@ -1,0 +1,186 @@
+@charset "ISO-8859-1";
+.heading1{
+	font-size: 25px;
+    font-weight: bold;
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    color:#000000;
+    text-align: left;
+    position: absolute;
+    margin-top: 100px;
+    margin-left: 20px;
+}
+
+#mysmartdiv{
+	width: 27%;
+	min-height: 500px;
+	background-color: white;
+	float: right;
+	border: 1px solid #909497;
+	margin-top: 65px;
+	overflow: auto;
+}
+
+
+#mysmartdivheading{
+	width: 100%;
+	font-family: Lato, Arial Black;
+	background-color:#00738c; 
+	color: #ffffff;
+	font-weight: bold;
+	font-size: 25px;
+	position: relative;
+	padding: 5px;
+	text-align: center;
+}
+
+#stats{
+ padding: 10px;
+ font-family: "Lato, Trebuchet MS", Arial, Helvetica, sans-serif;
+ padding-top: 10px;
+ font-weight: bold;
+ font-size: 15px;
+ color: black;
+ border-bottom: solid 2px #00738c;
+ width: 50px;
+}
+
+#recentassignments{
+ margin-top: 170px;
+ padding: 10px;
+ font-family: "Lato, Trebuchet MS", Arial, Helvetica, sans-serif;
+ padding-top: 10px;
+ font-weight: bold;
+ font-size: 15px;
+ color: black;
+ border-bottom: solid 2px #00738c;
+ width: 200px;
+}
+
+#lefttop{
+	width: 49%;
+	height: 15%;
+	position: relative;
+	float: left;
+	text-align: center;
+	/* padding: 10px; */
+	border-right: 1px solid #999E9E;
+}
+#righttop{
+	width: 49%;
+	height: 15%;
+	position: relative;
+	float: right;
+	text-align: center;
+	/* padding: 10px; */
+	
+	
+}
+#leftbottom{
+	width: 49%;
+	height: 15%;
+	position: relative;
+	float: left;
+	text-align: center;
+	/* padding: 10px; */
+	border-right: 1px solid #999E9E;
+	
+}
+#rightbottom{
+	width: 49%;
+	height: 15%;
+	position: relative;
+	float: right;
+	text-align: center;
+	/* padding: 10px; */
+	
+	
+}
+
+.numbers{
+	font-size: 35px;
+	
+}
+
+.desc{
+	font-size: 15px;
+	font-weight: bold;
+}
+
+.projects{
+	width: 160px;
+	height: 160px;
+	position: relative;
+	float: left;
+	text-align: center;
+	padding: 20px;
+	background-color:RGB(196, 196 , 196);
+	margin: 20px;
+	box-shadow: 4px 4px 7px #666666;
+	cursor: pointer;
+	
+}
+
+.projects{
+   white-space: nowrap; 
+
+    overflow: hidden;
+    text-overflow: ellipsis; 
+}
+.projectsneeded{
+	width: 160px;
+	height: 160px;
+	position: relative;
+	float: left;
+	text-align: center;
+	padding: 20px;
+	background-color:RGB(196, 196 , 196);
+	margin: 20px;
+	cursor: pointer;
+	color: #706869;
+}
+
+#myprojectlistdiv{
+	margin-top:90px;
+	height:80%;
+	width: 70%;
+	float: left;
+	text-align: center;
+	margin-left: 20px;
+}
+
+.imagediv{
+	padding: 10px;
+	background-color: white;
+	margin: 10px;
+	height: 65%;
+	width: 70%;
+	
+}
+
+.imagedivneeded{	
+	padding: 10px;
+	/* background-color: #ADB1D2; */
+	background-color: white;
+	margin: 10px;
+	height: 65%;
+	width: 70%;
+	
+}
+
+
+/* Responsive Design */
+
+@media screen and (max-width:750px) {
+#mysmartdiv{
+	clear:both;
+	float: left;
+	min-width: 400px;
+	height: 500px;
+	background-color: white;
+	border: 1px solid #909497;
+   margin:10px 0px 0px 15px;
+ 
+   overflow:auto;
+   position:relative; 
+}
+}

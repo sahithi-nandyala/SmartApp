@@ -1,0 +1,127 @@
+@charset "ISO-8859-1";
+html,
+body {
+	height: 100%;
+}
+
+table.Assignmentdetails {
+	border-collapse: separate;
+	font-size: 18px;
+	line-height: 24px;
+	text-align: left;
+	width: 80%; 
+	font-style: Lato;
+}
+
+table.Assignmentdetails th {
+	color: #000000;
+ 	font-weight: bold;
+	padding: 10px 15px;
+	position: relative;
+	width:200px;
+	text-align: left;
+	font-size: 20px;
+}
+
+table.Assignmentdetails td {
+
+	padding: 10px 15px;
+	position: relative;
+	transition: all 300ms;
+}
+
+table.classform {
+	width:80%;		
+	border-collapse: separate;
+	
+	font-size: 14px;
+	line-height: 24px;
+	margin: 60px auto;
+	text-align: left;
+}
+
+table.modal {  
+   
+	border-collapse: separate;
+	box-shadow: inset 0 1px 0 #fff;
+	font-size: 14px;
+	line-height: 24px;
+	margin: 0px;
+	text-align: center;
+	width: 100%; 
+	border-spacing: 0px;
+  
+}
+table.modal th { 
+	border-top: 1px solid #97a675;
+	border-bottom: 4px solid #97a675;
+	color: #000000;
+  font-weight: bold;
+	padding: 10px 15px;
+	position: relative;
+	
+
+	}
+table.modal td { 
+	
+	border-right: 1px solid #fff;
+	border-left: 1px solid #e8e8e8;
+	border-top: 1px solid #fff;
+	border-bottom: 1px solid #e8e8e8;
+	padding: 7px 15px;
+	position: relative;
+	transition: all 300ms;
+  color:black;
+  background-color:white;
+	
+} 
+
+#modelcontainer
+{
+	width:80%;
+	box-shadow: inset 0 1px 0 #fff;
+	font-size: 14px;
+	line-height: 24px;
+	margin: 100px;
+	text-align: left;
+	border:1px solid gray;
+}
+/* The Close Button */
+.close {
+	color: #ffffff;
+	float: right;
+	font-size: 24px;
+	font-weight: bold;
+	text-decoration: none;
+    background-color: #00738c;
+    padding: 4px 20px 4px 20px;
+    border: solid 1px;
+    border-radius: 6px;
+}
+
+.close:hover, .close:focus {
+	color: #000;
+	text-decoration: none;
+	cursor: pointer;
+    background-color: #81b0b2;
+     padding: 4px 20px 4px 20px;
+    border: solid 1px;
+    border-radius: 6px;
+}
+
+  
+.refmodeltitle
+{
+	color:#800000;
+	font-weight:bold;
+	background:none;
+	text-decoration:none;
+	background:none;
+	border:none;
+	cursor:pointer;
+	font-size:16px;
+}
+.refmodeltitle:hover
+{
+	color:#0080b0;
+}

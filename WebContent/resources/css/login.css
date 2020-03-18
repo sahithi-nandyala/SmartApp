@@ -1,0 +1,107 @@
+#body {
+	background-color: #F1F0EB;
+}
+
+.sign {
+	font-family: Lato, Impact, Charcoal, sans-serif;
+  	color: #ffbc40;
+  	text-align: center;
+  	font-size: 50px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-top: 50px;
+}
+
+
+.btn {
+  -webkit-border-radius: 8;
+  -moz-border-radius: 8;
+  border-radius: 8px;
+  border: solid #00738c 2px;
+  font-family: Lato, arial;
+  color: #ffffff;
+  font-size: 20px;
+  background: #00738c;
+  padding: 2px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-decoration: none;
+  width:100%;
+}
+
+.btn:hover {
+  background: #81b0b2;
+  border: solid #81b0b2 2px;
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: bold;
+  letter-spacing: 2px;
+  font-size: 20px;
+}
+
+.resetbtn {
+  -webkit-border-radius: 8;
+  -moz-border-radius: 8;
+  border: solid #db0d6a 2px;
+  border-radius: 8px;
+  -webkit-box-shadow: 7px 5px 7px #a33e77;
+  -moz-box-shadow: 7px 5px 7px #a33e77;
+  box-shadow: 7px 5px 7px #a33e77;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  background: #db0d6a;
+  padding: 15px 40px 15px 40px;
+  text-decoration: none;
+}
+
+.resetbtn:hover {
+  background: #2a8a12;
+  border: solid #2a8a12 2px;
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: bold;
+  letter-spacing: 2px;
+  font-size: 20px;
+}
+
+
+.tablecss {
+	width: 200px;
+	align: center;
+}
+
+#userName{
+	font: Lato, normal arial;
+	height: 50px;
+	width: 300px;
+	font-size: 15px;
+	letter-spacing: 1px;
+	text-align: center;
+	color:gray;
+}
+
+#password{
+	font: Lato, normal arial;
+	height: 50px;
+	width: 300px;
+	font-size: 15px;
+	text-align: center;
+	letter-spacing: 1px;
+	color:gray;
+}
+
+::-webkit-input-placeholder { 
+  color: #E3DFDF;
+}
+::-moz-placeholder { 
+  color: #E3DFDF;
+}
+:-ms-input-placeholder { 
+  color: #E3DFDF;
+}
+:-moz-placeholder { 
+  color: #E3DFDF;
+}

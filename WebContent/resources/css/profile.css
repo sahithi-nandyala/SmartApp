@@ -1,0 +1,207 @@
+th {
+    cursor: pointer;
+}
+/* The Modal (background) */
+.modal {
+	display: none; /* Hidden by default */
+	position: fixed; /* Stay in place */
+	z-index: 1; /* Sit on top */
+	padding-top: 50px; /* Location of the box */
+	left: 0;
+	top: 0;
+	width: 100%; /* Full width */
+	height: 100%; /* Full height */
+	overflow: auto; /* Enable scroll if needed */
+	background-color: rgb(0, 0, 0); /* Fallback color */
+	background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+#modelcontainer {
+	background-color: #fefefe;
+	margin: auto;
+	padding: 20px;
+	border: 1px solid #888;
+	min-width: 400px;
+	width: 50%;
+	max-height:75%;
+	overflow:auto;
+}
+
+/* The Close Button */
+.close {
+	color: #fff;
+	float: right;
+	font-size: 24px;
+	font-weight: bold;
+	text-decoration: none;
+    background-color: #00738c;
+    padding: 4px 20px 4px 20px;
+    border: solid 1px;
+    border-radius: 6px;
+}
+
+.close:hover, .close:focus {
+	color: #000;
+	text-decoration: none;
+	cursor: pointer;
+    background-color: #81b0b2;
+     padding: 4px 20px 4px 20px;
+    border: solid 1px;
+    border-radius: 6px;
+}
+
+#table {
+    font-family: Lato, "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 50%;
+    top-margin: 200px;
+}
+
+#tableedit {
+    font-family: Lato, "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+  min-width: 400px;  
+	width: 50%;
+	 margin-bottom: 15px;
+	margin-left: auto;
+	margin-right: auto;
+	overflow:auto;
+}
+
+
+#table td {
+    border: 2px solid #ddd;
+    padding: 20px;
+}
+
+#table th {
+    padding: 20px;
+	border: 2px solid #ddd;
+	border-bottom: 2px solid #6b9f01;	
+	  text-align: right;
+    color: black;
+    font-weight: normal;
+    width:200px;
+}
+
+
+#tableedit td{
+	text-align: left;
+}
+#tableedit th{
+	border: 2px solid #ddd;
+    padding: 20px;
+	padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: right;
+    color: black;
+    font-weight: normal;
+    width:200px;
+	border-bottom: 5px solid #6b9f01;
+}
+
+/* #table tr:nth-child(even){background-color: #f2f2f2;} */
+
+/* #table tr:hover {background-color: #ddd;} */
+
+#field {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: right;
+    background-color: #6b9f01;
+    color: black;
+    width: 200px;
+}
+
+.classes
+{
+	font-family: Lato, "Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+.classes dd
+{
+	display:none;
+	background-color: #f2f2f2;
+}
+.classes dt
+{
+	cursor: pointer;
+}
+
+.classes dt:hover
+{
+	color:red;
+}
+
+.textboxcss{
+	font: Lato, normal arial;
+	height: 40px;
+	width: 100%;
+	font-size: 15px;
+	letter-spacing: 2px;
+	text-align: center;
+	top-margin: 10px;
+	border:none;
+}
+
+.labelcss{
+	font: Lato, normal arial;
+  	color: #2BC4B9;
+  	text-align: left;
+  	font-size: 15px;
+    font-weight: normal;
+    letter-spacing: 2px;
+    margin-top: 10px;
+}
+
+.heading1{
+	font-size: 20px;
+    font-weight: bold;
+    font-family: Lato, Arial;
+    color:#000000;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.error
+{
+	font-size: 13px;
+    font-weight: normal;
+    font-family: Lato, Arial;
+    color:#DC143C;
+}
+
+
+/* Responsive Design */
+@media screen and (max-width:800px) {
+#modelcontainer {
+	background-color: #fefefe;
+	margin: 0px;
+	padding: 20px;
+	border: 1px solid #888;
+	min-width: 250px;
+	width: 75%;
+	overflow:auto;
+}
+#tableedit {
+    font-family: Lato, "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+  min-width: 200px;  
+	width: 100%;
+	 margin-bottom: 15px;
+	margin: 0px;
+	overflow:auto;
+}
+	#tableedit th{
+	border: 2px solid #ddd;
+    padding: 20px;
+	padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: right;
+    color: black;
+    font-weight: normal;
+    width:80px;
+	border-bottom: 5px solid #6b9f01;
+}
+}

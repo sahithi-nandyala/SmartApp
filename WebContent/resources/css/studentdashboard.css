@@ -1,0 +1,305 @@
+@charset "ISO-8859-1";
+   .button {
+  display: inline-block;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  cursor: pointer;
+  padding: 10px 20px;
+  border: 1px solid #018dc4;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  font: Lato, normal medium/normal Arial, Helvetica, sans-serif;
+  color: rgba(255,255,255,0.9);
+  -o-text-overflow: clip;
+  text-overflow: clip;
+  background: #0199d9;
+  -webkit-box-shadow: 2px 2px 2px 0 rgba(0,0,0,0.2) ;
+  box-shadow: 2px 2px 2px 0 rgba(0,0,0,0.2) ;
+  text-shadow: -1px -1px 0 rgba(15,73,168,0.66) ;
+  -webkit-transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
+  -moz-transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
+  -o-transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
+  transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
+}
+
+.button:hover {
+  border: 1px solid #007cad;
+  background: rgba(0,142,198,1);
+  -webkit-box-shadow: 2px 2px 2px 0 rgba(0,0,0,0.3) ;
+  box-shadow: 2px 2px 2px 0 rgba(0,0,0,0.3) ;
+  -webkit-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+  -moz-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+  -o-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+  transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+}
+
+.button:active {
+  border: 1px solid #018dc4;
+  background: #00a6e8;
+  -webkit-box-shadow: 0 1px 4px 0 rgba(0,0,0,0.2) inset;
+  box-shadow: 0 1px 4px 0 rgba(0,0,0,0.2) inset;
+  text-shadow: none;
+  -webkit-transition: all 50ms cubic-bezier(0.42, 0, 0.58, 1);
+  -moz-transition: all 50ms cubic-bezier(0.42, 0, 0.58, 1);
+  -o-transition: all 50ms cubic-bezier(0.42, 0, 0.58, 1);
+  transition: all 50ms cubic-bezier(0.42, 0, 0.58, 1);
+}
+
+.deleteclass
+{
+	     border:none; 
+     padding:0!important;
+     /*border is optional*/
+      
+     cursor: pointer;
+     color:gray;
+     font-size:16px;
+     background:none;
+     
+}
+
+#classes
+{
+	align:center;
+	padding:30px 0px 0px 150px;
+	margin:0px;
+}
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+    font-size:18px;
+    font-weight:bold;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: gray;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+    top: -5px;
+    right: 105%;
+}
+
+.tooltiptext
+{
+	font-size:16px;
+	font-weight:normal;
+}
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+
+.tile
+{
+	width:100px;
+	height:50px;
+	margin:10px;
+	border:1px solid black;
+	padding:10px;
+	font-size:18px;
+	background-color:silver;
+}
+.tile a
+{
+	margin:0px;
+	padding:5px;		
+	color:black;
+	width:100px;
+	height:50%;
+	text-decoration:none;
+}
+.title p
+{
+	margin:0px;
+	padding:0px;
+	
+}
+
+.maintable
+{
+	width:70%;
+	margin:0px 0px 0px 0px;
+	padding:0px;
+}
+
+.maintable tr td.mystats
+{
+	width:25%;
+	margin:0px;
+	padding:0px;
+	vertical-align:top;
+}
+.projectsneeded{
+	width: 100px;
+	height: 100px;
+	position: relative;
+	float: left;
+	text-align: center;
+	padding: 10px 4px 20px 4px;
+	background-color:#DEDDDB;
+	margin: 20px 10px;
+	cursor: pointer;
+	color: #000000;
+	font-size:14px;
+	font-weight:bold;
+	white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis; 
+    border:2px solid white;
+}
+
+.studentprojectsneeded{
+	width: 100px;
+	height: 100px;
+	position: relative;
+	float: left;
+	text-align: center;
+	padding: 10px 4px 20px 4px;
+	background-color:#DEDDDB;
+	margin: 20px 10px;
+	cursor: pointer;
+	color: #000000;
+	font-size:14px;
+	font-weight:bold;
+	white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis; 
+    border:2px solid white;
+    display:block;
+}
+
+.imagedivneeded{	
+	padding: 10px;
+	/* background-color: #ADB1D2; */
+	background-color: white;
+	margin: 10px;
+	height: 65%;
+	width: 70%;
+	
+}
+
+
+#myprojectlistdiv{
+	margin-top:50px;
+	height:80%;
+	width: 70%;
+	float: left;
+}
+
+#mysmartdiv{
+	width: 27%;
+	height: 500px;
+	background-color: white;
+	float: right;
+	border: 1px solid #909497;
+   margin:0px;
+   overflow:auto;
+}
+
+#mysmartdivheading{
+ width: 100%;
+ font-family: Lato, "Arial Black", Gadget, sans-serif;
+ background-color:#00738c;
+ color: white;
+ font-weight: bold;
+ font-size: 25px;
+ position: relative;
+ padding: 10px;
+ text-align: center;
+ margin:0px;
+}
+
+#stats{
+	padding: 10px;
+	font-family: Lato, "Arial Black", Gadget, sans-serif;
+	padding-top: 10px;
+	font-weight: bold;
+	font-size: 15px;
+	color: black;
+}
+
+#recentassignments{
+	margin-top: 60px;
+	padding: 10px;
+	font-family: Lato, "Arial Black", Gadget, sans-serif;
+	padding-top: 10px;
+	font-weight: bold;
+	font-size: 15px;
+	color: black;
+}
+#lefttop{
+	width: 49%;
+	height: 15%;
+	position: relative;
+	float: left;
+	text-align: center;
+	/* padding: 10px; */
+	border-right: 1px solid #999E9E;
+}
+#righttop{
+	width: 49%;
+	height: 15%;
+	position: relative;
+	float: right;
+	text-align: center;
+	/* padding: 10px; */
+	
+	
+}
+.numbers{
+	font-size: 30px;
+	font-weight: bold;
+}
+
+.desc{
+	font-size: 15px;
+	font-weight: bold;
+}
+
+
+/* Responsive Design */
+@media screen and (max-width:1220px) {
+#classes {
+	padding:30px 0px 0px 10px;
+	margin:0px;
+	width: 30%;
+}
+
+	
+}
+/* Responsive Design */
+@media screen and (max-width:1020px) {
+	#mysmartdiv{
+	clear:both;
+	float: left;
+	min-width: 400px;
+	height: 500px;
+	background-color: white;
+	border: 1px solid #909497;
+   margin:10px;
+		margin-left: 15px;
+   overflow:auto;
+   position:relative; 
+}
+	.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+    font-size:18px;
+    font-weight:bold;
+		margin-left: 10px;
+}
+#classes {
+	padding:30px 0px 0px 10px;
+	margin:0px;
+}
+}
