@@ -1395,7 +1395,7 @@ public class StudentController {
 		  	session.setAttribute("researcherid", userId);
 		  	session.setAttribute("userid", userDetails.getUserID());
 		  	userDetails=courseDetailsDaoImpl.getUserDetailsbyId(userDetails.getUserID());
-		  	ModelAndView mav = fromadmindashboard(request, response, userDetails);
+		  	 ModelAndView mav = fromadmindashboard(request, response, userDetails);
 		  	return mav;
 	   }
 	   
@@ -1405,7 +1405,7 @@ public class StudentController {
 				HttpSession session = request.getSession();
 				ModelAndView mav;
 					log.info("Logged in Userid: "+userDetails.getUserID());
-					//set session variables for user details
+					//set session variables for user details 
 					session.setAttribute("userid", userDetails.getUserID());
 					session.setAttribute("username" , userDetails.getUserName());
 					session.setAttribute("firstname", userDetails.getFirstName());

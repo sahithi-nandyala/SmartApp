@@ -52,7 +52,7 @@ textarea {
 }
 
 
-#responses{
+#type2_response_parent{
  border:3px solid #005cb9;
  border-radius:5px;
  padding:10px;
@@ -100,7 +100,7 @@ span.buttons:hover
 	padding:2px 5px;
 	margin:2px;
 	background-color:#eddbd5;
-	border-right:1px solid gray;
+	border:1px solid gray;
 	text-align:center;
 	valign:middle;
 align-content: center;
@@ -142,19 +142,5 @@ textarea {
  overflow: auto;
 }
 
-
-#responses{
- border:3px solid #005cb9;
- border-radius:5px;
- padding:10px;
-	align-content: center;
- margin:0px;
- height:500px;
- overflow:auto;
- width:90%;
-min-width: 500px;
-}
-	
-	
 	
 }

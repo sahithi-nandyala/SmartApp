@@ -21,6 +21,8 @@ function closeeditform(e)
 	p.parentElement.style.display="none";
 };
 
+
+
 window.onload = function() {
 	document.getElementById("conceptbtn").click();
 	displayExpertBase();
@@ -393,7 +395,8 @@ function displayExpertBase(){
     	.html(function (d) {
         	return d.concepts + "";
     	})
-    	svg.call(tip);  
+    	svg.call(tip);
+    
 	var nodes_data=${modelname.studentFeedbackNodes} ;
 	var links_data=${modelname.studentFeedbackLinks} ;
 

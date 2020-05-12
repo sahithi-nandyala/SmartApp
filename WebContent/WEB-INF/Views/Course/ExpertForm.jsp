@@ -188,7 +188,7 @@ window.onload = function() {
 <% int researcherid= (int)session.getAttribute("researcherid");
 if(researcherid!=-1) { %>
 
-	//document.getElementById("researchercontent").style.display="block";
+//	document.getElementById("researchercontent").style.display="block";
 	document.getElementById("teachercontent").style.display="none";
 	var elem = document.getElementById('teachercontent');
     elem.parentNode.removeChild(elem);
@@ -200,6 +200,8 @@ if(researcherid!=-1) { %>
 	//document.getElementById("researchercontent").style.display="none";
 	var elem = document.getElementById('researchercontent');
     elem.parentNode.removeChild(elem);
+    var elem1 = document.getElementById('researchercontent1');
+    elem1.parentNode.removeChild(elem1);
     return false;
 //	document.getElementById("teachercontent").style.display="block";
 	<% } %>

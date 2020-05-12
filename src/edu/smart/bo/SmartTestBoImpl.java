@@ -6,9 +6,12 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Properties;
 import java.util.Set;
 
+import org.apache.commons.lang3.ArrayUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import edu.smart.dao.CourseDetailsDaoImpl;
@@ -54,6 +57,21 @@ public class SmartTestBoImpl {
 		List<String> AllRelations=new ArrayList<String>();
 		char[] c= {'!','@','#','$','%','^','&','*','(',')','|','\\','/',',','`','~',':',';','<','>'};
 		String newtext=text;
+        CourseDetailsModel expertParameters = courseDetailsDaoImpl.ExpertModelValues(courseDetails.getModelID());
+        if(expertParameters.getKeyConceptSynonyms() != null && !expertParameters.getKeyConceptSynonyms().isEmpty()) {
+        	Map<String,String> keyConceptSynonyms = expertParameters.getKeyConceptSynonyms();
+        	for (String key : keyConceptSynonyms.keySet()) {
+        	    String synonymsValue = keyConceptSynonyms.get(key);
+        	    System.out.println("Synonyms Value --- "+ synonymsValue);
+        	    String[] synonymArr = synonymsValue.split(",");
+				   for(int l=0;l<synonymArr.length;l++) {
+					   if(StringUtils.isNotEmpty(synonymArr[l]) && newtext.contains(synonymArr[l])) {
+						   	newtext=newtext.replaceAll(synonymArr[l], key);
+					   }
+				   }
+        	}
+        }
+
 		for(int i=0;i<c.length;i++)
 		{
 			newtext=newtext.replace(c[i], ' ');
@@ -162,7 +180,7 @@ public class SmartTestBoImpl {
 	        if(model.equals("student"))
 	        {
 	        //getting matrix values from database to compute similarity measures
-	        CourseDetailsModel expertParameters = courseDetailsDaoImpl.ExpertModelValues(courseDetails.getModelID());
+	       // CourseDetailsModel expertParameters = courseDetailsDaoImpl.ExpertModelValues(courseDetails.getModelID());
 	        
 	        //compute similarity values
 	        courseDetailsModel=Computesimilaritymeasures(courseDetailsModel,expertParameters);
@@ -413,6 +431,7 @@ public class SmartTestBoImpl {
 			System.out.println(" No of diameter="+ diameter);
 			System.out.println(" Mean Distance="+ MD);
 			System.out.println(" No of connected="+ connected);
+			
 			System.out.println(" No of concepts="+ NOC +": \n No of Relations="+NOR+": \n Subgraph="+Subgraph+": \n Avg Degree="+avgd+": \n Density="+density+": \n diameter="+diameter+": \n Mean Distance="+MD+"\n Conectedness="+connected);
 			
 			
@@ -593,14 +612,20 @@ public class SmartTestBoImpl {
 		 ArrayList<String> studentConcepts=student.getAllConceptList();
 		 ArrayList<String> expertKeyConceptsArray=expert.getKeyConcepts();
 		 ArrayList<String> MisingConcepts=new ArrayList<String>();
+		 Map<String,String> synonymMap = expert.getKeyConceptSynonyms();
 		
 		 for(int i=0;i<expertKeyConceptsArray.size();i++)
 		 {
 			 String f=expertKeyConceptsArray.get(i);
+			 String synonymString = synonymMap.get(f);
+			 String[] synonymsArray = null;
+			 if(StringUtils.isNotEmpty(synonymString)) {
+			  synonymsArray = synonymString.split(",");
+			 }
 			 int c=0;
 			 for(String s:studentConcepts)
 			 {
-				 if(f.equals(s))
+				 if(f.equals(s) || ArrayUtils.contains(synonymsArray, s))
 				 {
 					 c++;
 					 break;
@@ -608,7 +633,7 @@ public class SmartTestBoImpl {
 			 }
 			 if(c==0)
 			 {
-				 MisingConcepts.add(expertKeyConceptsArray.get(i));
+				 MisingConcepts.add(expertKeyConceptsArray.get(i) + (synonymString != null ? ("(" + synonymString + ")") : StringUtils.EMPTY));
 			 }
 		 }
 		 student.setMissingConcepts(MisingConcepts);

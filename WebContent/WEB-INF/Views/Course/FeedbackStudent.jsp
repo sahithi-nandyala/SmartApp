@@ -1075,6 +1075,7 @@ else userid = (int) session.getAttribute("userid");
 	<div class="tab">
 	  <button id="conceptbtn" class="tablinks" onclick="openTab(event, 'concepts')">Missing Concepts</button>
 	  <button id="linksbtn" class="tablinks" onclick="openTab(event, 'links')">Missing Links</button>
+	  <button id="synonymsbtn" class="tablinks" onclick="openTab(event, 'synonyms')">Synonyms</button>
 	</div>
 	<div id="concepts" class="tabcontent">
 	<p class="conceptheading">
@@ -1096,6 +1097,20 @@ else userid = (int) session.getAttribute("userid");
 	  <tr>
 	  	<td class="missing"><span class="missingdot"></span> ${element}</td>
 	  </tr>
+	  </c:forEach>
+	  </table>
+	</div>
+	
+	<div id="synonyms" class="tabcontent">
+	  <p class="conceptheading">
+	  Here is the reference key concept - synonym information:  </p><br /><br />
+	  <table>
+	  <c:forEach var="element" items="${modelname.expert.keyConceptSynonyms}">
+	  <c:if test="${not empty element.value}">
+	  <tr>
+	  	<td class="missing"><span class="missingdot"></span> ${element.key} : ${element.value}</td>
+	  </tr>
+	  </c:if>
 	  </c:forEach>
 	  </table>
 	</div>

@@ -1,6 +1,7 @@
 package edu.smart.model;
 
 import java.util.ArrayList;
+import java.util.Map;
 
 import edu.smart.pojo.AssignmentDetails;
 import edu.smart.pojo.CourseDetails;
@@ -31,6 +32,7 @@ public class CourseDetailsModel {
 	private String problemStatement;
 	private String topic;
 	private String model;
+	
 	private CourseDetails referencedetails;	
 	private int noOfConcepts;
 	private int noOfRelations;
@@ -90,6 +92,8 @@ public class CourseDetailsModel {
 	private AssignmentDetails assignmentDetails;
 	private String concepthighlightpairs;
 	private ArrayList<CourseDetailsModel> allresponses;
+	private Map<String,String> keyConceptSynonyms;
+
 	
 	
 	public ArrayList<String> getMissingLinksForDisplay() {
@@ -602,6 +606,10 @@ public class CourseDetailsModel {
 	public void setAllresponses(ArrayList<CourseDetailsModel> allresponses) {
 		this.allresponses = allresponses;
 	}
-
-
+	public Map<String, String> getKeyConceptSynonyms() {
+		return keyConceptSynonyms;
+	}
+	public void setKeyConceptSynonyms(Map<String, String> keyConceptSynonyms) {
+		this.keyConceptSynonyms = keyConceptSynonyms;
+	}
 }

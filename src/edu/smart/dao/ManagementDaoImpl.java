@@ -284,6 +284,8 @@ public class ManagementDaoImpl {
 			String query="select modelid, studentid from student_model_mapping where modelid in (select modelid from student_model where expertmodelid in "
 					+ "( select expertmodelid from expert_model where problemID ="+assignId+"))";
 			
+			System.out.println("Query1=" + query);
+			
 			SqlRowSet sqlRowset = template.queryForRowSet(query);
 			while(sqlRowset.next()) {
 				CourseDetailsModel courseDetailsModel = new CourseDetailsModel();
@@ -293,11 +295,18 @@ public class ManagementDaoImpl {
 				
 				int modelId = sqlRowset.getInt("modelid");
 				String query2 ="select * from student_model where modelID="+modelId;
+				System.out.println("Query2=" + query2);
+				
+				//String query3 ="select * from student_model2 where adjacencymatrix!='null' and modelID="+modelId;
+				//@sahithi
 				String query3 ="select * from student_model2 where modelID="+modelId;
+				System.out.println("Query3=" + query3);
+				
 				log.info("modelid: "+modelId);
 				SqlRowSet sqlRowset2 = template.queryForRowSet(query2);
 				
 				if(sqlRowset2.next()) {
+					System.out.println("Reached here 1");
 					courseDetailsModel.setKeyConcepts(AppendUtil.stringToList(sqlRowset2.getString("keyconcepts")));
 					courseDetailsModel.setMissingConcepts(AppendUtil.stringToList(sqlRowset2.getString("missingconcepts")));
 					courseDetailsModel.setExpertID(sqlRowset2.getInt("expertmodelid"));
@@ -325,16 +334,21 @@ public class ManagementDaoImpl {
 					courseDetailsModel.setSm_conceptualmatching(sqlRowset2.getDouble("SM_conceptual"));
 					courseDetailsModel.setSm_propositionalmatching(sqlRowset2.getDouble("SM_relational"));
 					
+					System.out.println("Reached here 2");
 					SqlRowSet sqlRowset3 = template.queryForRowSet(query3);
 					if(sqlRowset3.next()) {
 						courseDetailsModel.setDBAdjacencyMatrix(sqlRowset3.getString("adjacencyMatrix"));
 						courseDetailsModel.setPathList(AppendUtil.stringToList(sqlRowset3.getString("pathlist")));
 						courseDetailsModel.setMissingLinks(AppendUtil.stringToList(sqlRowset3.getString("missinglinks")));
+						System.out.println("Reached here 3");
+
 						courseDetailsModel.setRecallkeyconcepts(Double.parseDouble(sqlRowset3.getString("recallC")));
 						courseDetailsModel.setRecallKeylinks(Double.parseDouble(sqlRowset3.getString("recallP")));
 						dateAndTime = sqlRowset3.getDate("createddate").toString();
 						dateAndTime += " " + sqlRowset3.getTime("createddate").toString();
 						courseDetailsModel.setCreatedDateTime(dateAndTime);
+						System.out.println("Reached here 4");
+						
 					}
 					
 				}
@@ -348,14 +362,23 @@ public class ManagementDaoImpl {
 						}
 					}
 				}
+				System.out.println("Reached here 5");
+				
 				InstructorManagement instructorManagement = new InstructorManagement();
-				courseDetailsModel=instructorManagement.convertToAdjacencyMatrix(courseDetailsModel);
+				System.out.println("Reached here 5.1");
+				courseDetailsModel=instructorManagement.convertToAdjacencyMatrix(courseDetailsModel); // PROBLEM LINE
+				System.out.println("Reached here 5.2");
 				CourseDetailsModel expertParameters = ExpertModelValues(courseDetailsModel.getExpertID());
+				System.out.println("Reached here 5.3");
 				courseDetailsModel.setExpert(expertParameters);
+				System.out.println("Reached here 5.4");
 				DisplayGraph displayGraph = new DisplayGraph();
+				System.out.println("Reached here 5.5");
 				courseDetailsModel=displayGraph.createJsonStudentFeedback(courseDetailsModel,0);
 				System.out.println("Common Links: "+courseDetailsModel.getCommonLinks().size());
 				modelList.add(courseDetailsModel);
+				System.out.println("Reached here 6");
+				
 				instructorModel.getModelStudentResultList().put(courseDetailsModel, studentDetails);
 			}
 			instructorModel.setStudentModels(modelList);

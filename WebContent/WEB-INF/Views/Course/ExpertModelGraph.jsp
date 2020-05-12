@@ -752,9 +752,11 @@ function downloadexpertmodel()
 		<th> Key Relations (${modelname.noOfKeyLinks})</th>
 	</tr>
 	<tr valign="top">
-	<td><c:forEach var="element" items="${modelname.keyConcepts}">
-	 &nbsp;&nbsp;${element}<br /></c:forEach>
-	 </td>
+	<td>
+	<c:forEach var="element" items="${modelname.keyConceptSynonyms}">
+	  	&nbsp;&nbsp;${element.key} : ${element.value}<br/>
+	  </c:forEach>
+	  
 	 <td><c:forEach var="element" items="${modelname.keyRelations}">
 	 	&nbsp;&nbsp;
 	 	<%-- <c:forEach var="rel" items="${element.key}">

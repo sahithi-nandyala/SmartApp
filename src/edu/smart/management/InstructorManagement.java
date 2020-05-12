@@ -84,7 +84,7 @@ public class InstructorManagement {
 		DecimalFormat df2 = new DecimalFormat(".#####");
 		for (Map.Entry<UserDetails,CourseDetailsModel> pair : instructorModel.getStudentResultList().entrySet()) {
 			pair.getValue().setRecallkeyconcepts(Double.parseDouble((df2.format(pair.getValue().getRecallkeyconcepts()))));
-			pair.getValue().setRecallKeylinks(Double.parseDouble((df2.format(pair.getValue().getRecallKeylinks()))));
+			pair.getValue().setRecallKeylinks(Double.parseDouble((df2.format(!Double.isNaN(pair.getValue().getRecallKeylinks()) ? pair.getValue().getRecallKeylinks() : 0D))));
 			avgRecallC = avgRecallC + pair.getValue().getRecallkeyconcepts();
 			avgRecallP = avgRecallP + pair.getValue().getRecallKeylinks();
 		}
@@ -654,6 +654,8 @@ public class InstructorManagement {
 		ArrayList<ArrayList<String>> adjacencyList= new ArrayList<ArrayList<String>>();
 		String[] adjacencyArray1 = model.getDBAdjacencyMatrix().split("/");
 		int i,j, size=0;
+		
+		//if ( adjacencyArray1 != null && adjacencyArray1.length > 0 ) {
 		
 		//System.out.println("Adjacency matrix from db: "+ studentModel.getExpert().getDBAdjacencyMatrix());
 		for(i=0;i<adjacencyArray1.length;i++) {

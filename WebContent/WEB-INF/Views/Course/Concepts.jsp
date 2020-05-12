@@ -66,6 +66,27 @@
 	</td>
 	</tr>
 </table>
+
+<table class="concepttable">
+	<tr>
+	<td>
+		<h3>Key Concept Synonyms</h3>
+	</td>
+	</tr>
+	<tr>
+	<td>
+		<table border="1" id="kconceptSynonymsTable">
+			<c:forEach var="kconcept" items="${modelname.keyConcepts}" varStatus="keyConceptIndex">
+				<tr>
+					<td><b><span id="keyConceptText_${keyConceptIndex.index}">${kconcept}</span></b></td>
+					<td><input id="keyConceptSynonym_${keyConceptIndex.index}" name="keyConceptSynonym_${keyConceptIndex.index}" type="text" value="${modelname.keyConceptSynonyms[kconcept]}"/></td>
+				</tr>
+			</c:forEach>
+		</table>
+	</td>
+	</tr>
+</table>
+
 <table class="buttontable">
 	<tr>
 	 <td><input class="button2" type="button" value="Save" onClick="submitallconcepts()" /></td>

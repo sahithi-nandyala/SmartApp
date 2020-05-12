@@ -84,10 +84,7 @@ ${model.displayedassignment.description}
 					<c:set var="type" value="${model.displayedassignment.type}"/>
 				<%-- <c:choose>
 				<c:when test = "${type == 'type1'}">
-			
 			--%>	
-			
-			
 			<span class="buttons" onClick='displaymyresponseType("${type}")'>See all my responses</span>
 			<%--</c:when> 
 			<c:when test = "${type == 'type2'}">
@@ -107,7 +104,8 @@ ${model.displayedassignment.description}
 			<span class="greendot"></span> Excellent&nbsp;
 			<span class="bluedot"></span> Nice&nbsp;
            <span class="orangedot"></span> Improving&nbsp;
-           <span class="reddot"></span>Insufficient&nbsp; 
+          
+           <span class="reddot"></span>Need More&nbsp; 
            </div>
 				<div id="type2_response_parent">
 				<div>

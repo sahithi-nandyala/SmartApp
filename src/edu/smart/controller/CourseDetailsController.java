@@ -1,7 +1,11 @@
 package edu.smart.controller;
 
+import java.io.IOException;
+import java.io.OutputStream;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Map;
 
 //import java.io.IOException;
 //import java.io.OutputStream;
@@ -183,7 +187,9 @@ public class CourseDetailsController {
 	
 
 	  @RequestMapping(value = "/saveConcepts", method = RequestMethod.POST)
-	  public String saveConcepts(@RequestParam(value="myArrayk[]") String[] myArrayk, @RequestParam(value="expid") int expid,HttpServletRequest request,HttpServletResponse response) {
+	  public String saveConcepts(@RequestParam(value="myArrayk[]") String[] myArrayk, @RequestParam(value="expid") int expid,
+			  @RequestParam(value="synonymsArray[]") String[] synonymsArray,
+			  HttpServletRequest request,HttpServletResponse response) {
 			CourseDetailsModel courseDetailsModel = new CourseDetailsModel();
 		  HttpSession session = request.getSession();
 		  	int expertid = (int) session.getAttribute("expertid");
@@ -191,7 +197,9 @@ public class CourseDetailsController {
 
 		  ArrayList<String> Keyconcepts=new ArrayList<String>();
 		  Collections.addAll(Keyconcepts, myArrayk);
+		  System.out.println("Synonyms::"+AppendUtil.multiValArrayToString(synonymsArray));
 		  courseDetailsModel=courseDetailsDaoImpl.ExpertModelValues(expertid);
+		  courseDetailsModel.setKeyConceptSynonyms(AppendUtil.stringToMap(AppendUtil.multiValArrayToString(synonymsArray)));
 		  System.out.println("Before pathlist: "+courseDetailsModel.getPathList());
 		  courseDetailsModel.setKeyConcepts(Keyconcepts);
 		  Runner runner = new Runner();

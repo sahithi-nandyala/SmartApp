@@ -522,6 +522,32 @@
 			for(var len = selections.items.length, i = 0; i < len; i ++)
 			{
 				selections.droptarget.appendChild(selections.items[i]);
+				if(selections.droptarget.id == "key"){
+					if(document.getElementById("kconceptSynonymsTable") != null){
+						
+						var table = document.getElementById("kconceptSynonymsTable");
+						var row = table.insertRow(table.rows.length);
+						var cell1 = row.insertCell(0);
+						var cell2 = row.insertCell(1);
+						cell1.innerHTML = "<b><span id=\"keyConceptText_"+table.rows.length+"\">"+selections.items[i].innerHTML+"</span></b>";
+						cell2.innerHTML = "<input id=\"keyConceptSynonym_"+table.rows.length+"\" name=\"keyConceptSynonym_"+table.rows.length+"\" type=\"text\" value=\"\">";	
+					}
+				}
+				if(selections.droptarget.id == "basic"){
+					if(document.getElementById("kconceptSynonymsTable") != null){
+						var dataset = $('#kconceptSynonymsTable').find('tr');
+					      dataset.each(function(index) {
+					        item = $(this);
+					        var firstTd = item.find('td:first-child');
+					        var text = firstTd.text();
+
+			                if (text == selections.items[i].innerHTML) {
+								var table = document.getElementById("kconceptSynonymsTable");
+								var row = table.deleteRow(index);
+			                }
+					      });
+					}
+				}
 			}
 
 			//prevent default to allow the action			
@@ -612,12 +638,24 @@ function submitallconcepts()
 				
 	});
 	
+	var keyConceptSynonyms = [];
+	var dataset = $('#kconceptSynonymsTable').find('tr');
+    dataset.each(function(index) {
+      item = $(this);
+      var firstTd = item.find('td:first-child');
+      var keyconcepttext = firstTd.text();
+      var secondTd = item.find('td:first-child').next();
+      var keyconceptsynonymtext = secondTd.find("input:text").val();
+      keyConceptSynonyms[index]=keyconcepttext+":"+keyconceptsynonymtext;
+    });
+
 	$.ajax({
 	    type : "POST",
 	    url : "saveConcepts",
 	    data : {
 	        myArrayk: KeyConcepts,
-	        expid: id
+	        expid: id,
+	        synonymsArray: keyConceptSynonyms
 	    },
 	    success : function(response) {
 	       alert("Saved");

@@ -458,8 +458,10 @@ public class CourseDetailsDaoImpl{
 	{
 		StringBuilder sqlAppend2= new StringBuilder();
 		int status=0;
-		sqlAppend2.append("UPDATE expert_model SET keyconcepts=");
-		sqlAppend2.append("'" + AppendUtil.listToString(courseDetailsModel.getKeyConcepts())  + "' WHERE expertmodelid="+id+";");
+		sqlAppend2.append("UPDATE expert_model SET keyconcepts=")
+		.append("'" + AppendUtil.listToString(courseDetailsModel.getKeyConcepts())  + "'")
+		.append(" ,keyconceptsynonyms='").append(AppendUtil.mapToString(courseDetailsModel.getKeyConceptSynonyms()))
+		.append("' WHERE expertmodelid="+id+";");
 		template.update(sqlAppend2.toString());
 		String query ="UPDATE expert_model2 SET pathlist='"+AppendUtil.listToString(courseDetailsModel.getPathList())+"' WHERE expertmodelid="+id+";";
 		status=template.update(query);
@@ -479,7 +481,6 @@ public class CourseDetailsDaoImpl{
 	
 	public CourseDetailsModel ExpertModelValues(int id)
 	{
-		
 		StringBuilder sqlAppend= new StringBuilder();
 		StringBuilder sqlAppend2= new StringBuilder();
 		sqlAppend.append("SELECT * FROM expert_model WHERE expertmodelid="+id+";");
@@ -505,6 +506,7 @@ public class CourseDetailsDaoImpl{
 			result.setClusteringcoef(sqlRowset.getString("Clustering"));
 			result.setClosenessCentrality(sqlRowset.getString("closenessCentrality"));
 			result.setEigenVectorCentrality(sqlRowset.getString("eigenvector"));
+			result.setKeyConceptSynonyms(AppendUtil.stringToMap(sqlRowset.getString("keyconceptsynonyms")));
 		}
 		sqlAppend2.append("SELECT * FROM expert_model2 WHERE expertmodelid="+id+";");
 		SqlRowSet sqlRowset2 =  template.queryForRowSet(sqlAppend2.toString());
@@ -733,7 +735,8 @@ public class CourseDetailsDaoImpl{
 	
 	public void updateassignment(AssignmentDetails assign)
 	{
-		 template.execute("UPDATE assignment  SET title='"+assign.getTitle()+"', directions='"+assign.getDirections()+"', description='"+assign.getDescription()+"', as_status='"+assign.getStatus()+"', type='"+assign.getType() +"' WHERE assgntid="+assign.getAssgnmntId());
+		
+		 template.execute("UPDATE assignment  SET title='"+assign.getTitle()+"', directions='"+assign.getDirections()+"', description='"+assign.getDescription()+"', as_status='"+assign.getStatus() +"', type='"+assign.getType() +"' WHERE assgntid="+assign.getAssgnmntId());
 		 int choosenmodel=assign.getChoosenmodelID();
 		 if(choosenmodel!=0)
 		 template.execute("UPDATE choosenexpert SET choosenmodelid="+assign.getChoosenmodelID()+" WHERE assignmentid="+assign.getAssgnmntId());
@@ -978,7 +981,6 @@ public class CourseDetailsDaoImpl{
 	}
 	public CourseDetailsModel getStudentModelDetails(int studentresponseid, CourseDetailsModel courseDetailsModel) {
 		// TODO Auto-generated method stub
-		
 		String query1 = "SELECT * FROM student_model WHERE modelID="+studentresponseid;
 		String query2 = "SELECT * FROM student_model2 WHERE modelID="+studentresponseid;
 		SqlRowSet sqlRowset = template.queryForRowSet(query1);

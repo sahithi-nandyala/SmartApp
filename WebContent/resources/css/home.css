@@ -3,8 +3,7 @@
 * {
  padding:0px;
     margin:0px;
-   font-family:Lato,'Lucida Sans Unicode','Lucida Grande',sans-serif;
-  
+   font-family:Lato,'Lucida Sans Unicode','Lucida Grande',sans-serif; 
 }
 body, html
 {
@@ -30,12 +29,11 @@ margin-top: 10px;
 margin-left: 10px;
 }
 
-h3{
+h3 {
 font-family: Lato, Trebuchet MS, Arial;
 font-size: 18px;
 font-weight: bold;
 color: #000000;
-
 }
 
 .maincontent{

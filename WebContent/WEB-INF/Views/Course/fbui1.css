@@ -57,7 +57,7 @@
 
 .legenddiv {
     padding: 1px;
-    margin: 60px 40px 20px 10px;
+    margin: 70px 40px 20px 10px;
 }
 
 .heading1{
@@ -175,6 +175,9 @@ float:right;
     background-color: #8bc34a;
 	float: left;
 }
+
+
+
 .button {
     border: none;
     color: #ffffff;
@@ -244,28 +247,12 @@ float:right;
     overflow: scroll;
 }
 
-.orangedot {
+.reddot {
     height: 15px;
     width: 15px;
     background-color: #fb8c00;
     border-radius: 50%;
     display: inline-block;
-}
-
-.reddot{
-    height: 15px;
-    width: 15px;
-    background-color: #ff0000;
-    border-radius: 50%;
-    display: inline-block;   	
-}
-
-.bluedot{
-	 height: 15px;
-    width: 15px;
-    background-color: #0000ff;
-    border-radius: 50%;
-    display: inline-block; 
 }
 
 .greendot {
